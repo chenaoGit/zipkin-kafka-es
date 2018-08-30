@@ -1,0 +1,22 @@
+server:
+  port: 9411
+#\u914D\u7F6Ekafka
+spring:
+  sleuth:
+    enable: false
+zipkin:
+  enabled: true
+  storage:
+    type: elasticsearch
+    StorageComponent: elasticsearch
+    elasticsearch:
+      hosts: 10.247.63.71:9200
+      cluster: elasticsearch
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1
+  collector:
+    kafka:
+      bootstrap-servers: 10.247.63.71:9092
+      zookeeper: 10.247.63.71:2181
+      topic: zipkin

@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: serverBack
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+    service:
+      name: gatewayBack
+  kafka:
+    bootstrap-servers: 10.247.63.71:9092
+  sleuth:
+    sampler:
+      percentage: 1.0

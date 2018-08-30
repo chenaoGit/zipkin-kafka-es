@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: client
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
+    service:
+      name: gatewayClient
+  kafka:
+    bootstrap-servers: 10.247.63.71:9092
+  sleuth:
+    sampler:
+      percentage: 1.0
